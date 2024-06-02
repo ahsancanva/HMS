@@ -15,11 +15,11 @@
                     <div class="container">
                         <div class="row d-flex justify-content-center align-items-center">
                             <div class="col-6 d-flex justify-content-start align-items-center">
-                                <a class="btn btn-sm btn-primary w-25 mb-5" href="/nurse/death_report">Add New</a>
+                                <!-- <a class="btn btn-sm btn-primary w-25 mb-5" href="/nurse/death_report">Add New</a> -->
                             </div>
                             <div class="col-6">
                                 <form class="d-flex" id="search" role="search">
-                                    <input class="form-control " type="search" name="search" placeholder="Search" aria-label="Search">
+                                    <input class="form-control " type="search" name="search" placeholder="Search here..." aria-label="Search">
                                     <button class="sbtn" type="submit">Search</button>
                                 </form>
                             </div>
@@ -34,7 +34,7 @@
                                         <tr>
                                             <th>Death_Type</th>
                                             <th>Patient_Name</th>
-                                            <th>nurse_Name</th>
+                                            <th>Doctor_Name</th>
                                             <!-- <th>Date</th> -->
                                             <th>Status</th>
                                             <!-- <th>Email</th> -->
@@ -53,7 +53,7 @@
                                                         <%= user[i].patient_name %>
                                                     </td>
                                                     <td>
-                                                        <%= user[i].nurse_name %>
+                                                        <%= user[i].doctor_name %>
                                                     </td>
                                                     <!-- <td>
                                                         <%= user[i].date %>
@@ -68,23 +68,20 @@
                                                     </td>
                                                     <!-- <td>
                                                         <%= user[i].email %>
-                                                    </td> -->
+                                                    </td>-->
                                                     <td>
                                                         <%= user[i].mobile %>
-                                                    </td>
+                                                    </td> 
                                                     <td>
-                                                        <a style="margin-right: 7px; background-color: green; "
+                                                        <!-- <a style="margin-right: 7px; background-color: green; "
                                                             class="sbtn"
                                                             href="/nurse/death_report_edit?id=<%= user[i]._id %>">Edit</a>
                                                         <a class="sbtn"
                                                             href="/nurse/death_report_delete?id=<%= user[i]._id %>">Delete</a>
-                                                   
-                                                            <a style=" background-color: rgb(28, 0, 128); "
-                                                            class="sbtn"
-                                                            href="/nurse/death_report_view?id=<%= user[i]._id %>">view</a>
-                                                        
-                                                   
-                                                   
+                                                     -->
+                                                            <a class="sbtn" style="background-color: rgb(0, 13, 128); "
+                                                            href="/nurse/death_report_view?id=<%= user[i]._id %>">View</a>
+                                                    
                                                         </td>
 
                                                 </tr>

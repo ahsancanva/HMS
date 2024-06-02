@@ -7,26 +7,23 @@
                 <%- include('../partials/nurseSidebar') -%>
 
             </div>
-
             <div class="col-2 mt-3 profile">
 
                 <!-- <picture> -->
                 <!-- <img src="/image/<%=user.image%>" class="img-fluid img-thumbnail" alt="<%=user.image%>"> -->
                 <!-- </picture> -->
                 <h3 class="">
-                    <%=user.patient_name%>
+                    <%=user.name%>
                 </h3>
                 <p class="">
-                    <%=user.email%>
+                   <b>Time:</b> <%=user.time%>
                 </p>
-                <p class="">
-                    <% if(user.is_verified==1){ %>
-                        <p>Verified : true</p>
-                        <% } %>
-                </p>
+
                 <div class="button">
-                    <!-- <a href="/nurse/appointment_edit?id=<%=user._id%>" class="sbtn">Edit</a> -->
+                    <!-- <a href="/nurse/lab_edit?id=<%=user._id%>" class="sbtn">Edit</a> -->
                     <a href="/nurse/logout" class="sbtn">Logout</a>
+                    <a onclick="window.print()" class="sbtn mb-5" > Print.</a>
+
 
                 </div>
                 <div class="social">
@@ -38,83 +35,134 @@
 
             </div>
 
-            <div class="col-7 mt-1 aboutme" style="background-color: #fff;">
-                <div class="row mb-3">
-                    <div class="col-12">
-                        <img src="/image/appointment_certificate/appointment_certificate.png" class="w-100" alt="">
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="contain">
+            <div class="col-7 aboutme  " style="background-color: #fff;">
 
+                <div class="row m-3">
+                    <div class="col-6 p-3" style="border: 1px solid rgba(0,0,0,0.1); background-color: rgb(240, 255, 249);">
+                        <div class="row" style="display: flex; justify-content: center; align-items: center;">
+                            <div class="col-4">
+                                <h1>
+                                    <img class="logo" src="/image/home/logo.svg" style="width: 120px;" alt="">
+                            
+                                  </h1>
+                            </div>
+                            <div class="col-8">
+                                <h3 style="font-size: 18px; text-align: center;"><b>Appointment Voucher For MocDoc Hospital</b></h3>
+                                <p style="font-size: 10px; text-align: center;">Appintment Letter</p>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-6 p-3" style="border: 1px solid rgba(0,0,0,0.1);">
+                                <h3 style="font-size: 14px;"><%=user.patient_name%></h3>
+                                <p style="font-size: 10px;">Well Come <%=user.patient_name%> this is your Appintment Letter</p>
+                            </div>
+                            <div class="col-6 p-3" style="border: 1px solid rgba(0,0,0,0.1);">
+                                <h3 style="font-size: 14px;text-align: center;">MocDoc Hospital Bank</h3>
+                                <p style="font-size: 10px; text-align: center;">Deposit the fee challan only Hospital Bank</p>
+                            </div>
+                        </div>
                         <div class="row">
-                            <div class="col-9">
-                                <div class="content">
-                                    <!-- <h3 class=""> -->
-                                        <p style="font-size: 25px;"><b>Doctor : </b>Dr. <%=user.doctor_name%></p>
-                                    <!-- </h3> -->
-                                    <p>
-                                        <b>Appointment Date: </b>
-                                        <%=user.appointment_date%>
-                                    </p>
-                                    <p class="">
-                                        <% if(user.is_verified==1){ %>
-                                            <p><b>Verified</b> : true</p>
-                                            <% } %>
-                                    </p>
-                                    <p>
-                                        <b>Email: </b>
-                                        <%=user.email%>
-                                    </p>
-                                    <p>
-                                        <b>Mobile: </b>
-                                        <%=user.mobile%>
-                                    </p>
-                                </div>
+                            <div class="col-4">
+                                <p style="font-size: 10px; text-align: left;"><b>Voucher No:</b></p>
+                                <p style="font-size: 10px; text-align: left;"><b>Name:</b></p>
+                                <p style="font-size: 10px; text-align: left;"><b>Doctr Name:</b></p>
+                                <p style="font-size: 10px; text-align: left;"><b>Gender:</b></p>
+                                <p style="font-size: 10px; text-align: left;"><b>Mobile</b></p>
+                                <p style="font-size: 10px; text-align: left;"><b>Email:</b></p>
+                                <p style="font-size: 10px; text-align: left;"><b>Time:</b></p>
+                                <p style="font-size: 10px; text-align: left;"><b>Amount:</b></p>
+                                <br>
+                                <p style="font-size: 10px; text-align: left;"><b>Due Date:</b></p>
                             </div>
-                            <div class="col-2">
-                                <div class="image">
-                                    <a href=""  onclick="window.print()" class="sbtn mb-5">Print.</a>
-                                    <img src="/image/<%=user.image%>" alt="" style="width: 110px; height: 150px; margin-top: 1rem;">
-                                </div>
+                            <div class="col-4">
+                                <p style="font-size: 9px; text-align: left; "><%=user.id%></p>
+                                <p style="font-size: 9px; text-align: left; "><%=user.patient_name%></p>
+                                <p style="font-size: 9px; text-align: left; "><%=user.doctor_name%></p>
+                                <p style="font-size: 9px; text-align: left; "><%=user.gender%></p>
+                                <p style="font-size: 9px; text-align: left; "><%=user.mobile%></p>
+                                <p style="font-size: 9px; text-align: left; "><%=user.email%></p>
+                                <p style="font-size: 9px; text-align: left; "><%=user.time%></p>
+                                <p style="font-size: 9px; text-align: left; "><%=user.amount%></p>
+                                <br>
+                                <p style="font-size: 9px; text-align: left; "><%=user.appointment_date%></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <h3 style="font-size: 16px; text-align: center;">APPOINTMENT TERMS:</h3>
+                                <p style="font-size: 9px; text-align: center;">Fee must be deposited within due date.</p>
+                                <p style="font-size: 10px; text-align: center;">This Appointment letter will be cancelled automatically after due date.</p>
+                                <p style="font-size: 10px; text-align: center;">Any kind of editing in the voucher is strictly prohibited.</p>
+                                <p style="font-size: 12px; text-align: center;"><b>Bank Copy</b></p>
                             </div>
                         </div>
                     </div>
-                    <div class="content">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum quaerat minima ad inventore
-                            necessitatibus nobis porro eius alias dolorum. Laborum iure veritatis itaque laboriosam
-                            impedit!</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum officiis repudiandae
-                            explicabo repellat quibusdam obcaecati. Enim eaque molestiae, repellendus, officia in
-                            porro necessitatibus iste sequi debitis beatae laudantium fuga cupiditate laboriosam
-                            aliquam temporibus nisi incidunt? Suscipit facilis laboriosam nulla alias velit,
-                            exercitationem qui mollitia perspiciatis.</p>
-                        <br>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-8">
-                                    <p class="">
-                                        <b>Date of issue: <br> </b>
-                                        <%=user.appointment_date%>
-                                    </p>
-                                </div>
-                                <div class="col-4">
-                                    <p class="">
-                                        <b>Signature: </b>.........................
-                                    </p>
-                                </div>
+                    <div class="col-6 p-3" style="border: 1px solid rgba(0,0,0,0.1); background-color:rgb(240, 255, 249);">
+                        <div class="row" style="display: flex; justify-content: center; align-items: center;">
+                            <div class="col-4">
+                                <h1>
+                                    <img class="logo" src="/image/home/logo.svg" style="width: 120px;" alt="">
+                            
+                                  </h1>
+                            </div>
+                            <div class="col-8">
+                                <h3 style="font-size: 18px; text-align: center;"><b>Appointment Voucher For MocDoc Hospital</b></h3>
+                                <p style="font-size: 10px; text-align: center;">Appintment Letter</p>
                             </div>
                         </div>
-
+                        <div class="row mb-3">
+                            <div class="col-6 p-3" style="border: 1px solid rgba(0,0,0,0.1);">
+                                <h3 style="font-size: 14px;"><%=user.patient_name%></h3>
+                                <p style="font-size: 10px;">Well Come <%=user.patient_name%> this is your Appintment Letter</p>
+                            </div>
+                            <div class="col-6 p-3" style="border: 1px solid rgba(0,0,0,0.1);">
+                                <h3 style="font-size: 14px; text-align: center;">MocDoc Hospital Bank</h3>
+                                <p style="font-size: 10px; text-align: center;">Deposit the fee challan only Hospital Bank</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <p style="font-size: 10px; text-align: left;"><b>Voucher No:</b></p>
+                                <p style="font-size: 10px; text-align: left;"><b>Name:</b></p>
+                                <p style="font-size: 10px; text-align: left;"><b>Doctr Name:</b></p>
+                                <p style="font-size: 10px; text-align: left;"><b>Gender:</b></p>
+                                <p style="font-size: 10px; text-align: left;"><b>Mobile</b></p>
+                                <p style="font-size: 10px; text-align: left;"><b>Email:</b></p>
+                                <p style="font-size: 10px; text-align: left;"><b>Time:</b></p>
+                                <p style="font-size: 10px; text-align: left;"><b>Amount:</b></p>
+                                <br>
+                                <p style="font-size: 10px; text-align: left;"><b>Due Date:</b></p>
+                            </div>
+                            <div class="col-4">
+                                <p style="font-size: 9px; text-align: left; "><%=user.id%></p>
+                                <p style="font-size: 9px; text-align: left; "><%=user.patient_name%></p>
+                                <p style="font-size: 9px; text-align: left; "><%=user.doctor_name%></p>
+                                <p style="font-size: 9px; text-align: left; "><%=user.gender%></p>
+                                <p style="font-size: 9px; text-align: left; "><%=user.mobile%></p>
+                                <p style="font-size: 9px; text-align: left; "><%=user.email%></p>
+                                <p style="font-size: 9px; text-align: left; "><%=user.time%></p>
+                                <p style="font-size: 9px; text-align: left; "><%=user.amount%></p>
+                                <br>
+                                <p style="font-size: 9px; text-align: left; "><%=user.appointment_date%></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <h3 style="font-size: 16px; text-align: center;">APPOINTMENT TERMS:</h3>
+                                <p style="font-size: 9px; text-align: center;">Fee must be deposited within due date.</p>
+                                <p style="font-size: 10px; text-align: center;">This Appointment letter will be cancelled automatically after due date.</p>
+                                <p style="font-size: 10px; text-align: center;">Any kind of editing in the voucher is strictly prohibited.</p>
+                                <p style="font-size: 12px; text-align: center;"><b>Doctor Copy</b></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-
-                <!-- ------- -->
-
             </div>
+
 
         </div>
 
+    </div>
 
-        <%- include('../partials/nursesimfooter') -%>
+
+    <%- include('../partials/nursesimfooter') -%>
